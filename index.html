@@ -6,7 +6,6 @@
     <title>LA-Music</title>
 
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
 </head>
 <body>
     <nav>
@@ -34,25 +33,21 @@
                 <ul>0</ul>
             </div>
             <div class="songs">
-                <ul>1</ul>
-                <ul>2</ul>
-                <ul>3</ul>
-                <ul>4</ul>
-                <ul>5</ul>
-                <ul>6</ul>
-                <ul>7</ul>
-                <ul>8</ul>
-                <ul>9</ul>
-                <ul>0</ul>
+                <ul id="playlist"></ul>
             </div>
     </div>
     <div class="controller-section">
+        
             <div class="song-details">
                 <i>image here</i>
                 <h2>title</h2>
             </div>
-            <div class="plytime-details"></div>
+            <div class="plytime-details">
+                <audio id="player" controls></audio>
+            </div>
             <div class="music-controls"></div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
