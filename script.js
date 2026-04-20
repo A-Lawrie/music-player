@@ -35,7 +35,7 @@ const progress = document.getElementById("progress");
 const volume = document.getElementById("volume");
 
 // let currentSongs = songs;   // your songs array
-// let currentIndex = 0;
+let currentIndex = 0;
 
 const playlistsContainer = document.getElementById("playlists");
 
@@ -82,7 +82,6 @@ function loadSong(index, songs = currentSongs) {
 }
 
 //also the old code
-
 //dynamic loop
 // songs.forEach((song, index) => {
 //   const li = document.createElement("li");
@@ -121,7 +120,15 @@ prevBtn.addEventListener("click", () => {
 });
 
 player.addEventListener("ended", () => {
-  nextBtn.click();
+  currentIndex++;
+
+  // if you want looping playlist
+  if (currentIndex >= songs.length) {
+    currentIndex = 0;
+  }
+
+  player.src = songs[currentIndex];
+  player.play();
 });
 
 player.addEventListener("timeupdate", () => {
