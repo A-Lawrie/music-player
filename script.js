@@ -8,6 +8,16 @@ const playlist = document.getElementById("playlist");
 const player = document.getElementById("player");
 const cover = document.getElementById("cover");
 const title = document.getElementById("title");
+const playBtn = document.getElementById("play");
+const nextBtn = document.getElementById("next");
+const prevBtn = document.getElementById("prev");
+const currentTimeEl = document.getElementById("currentTime");
+const durationEl = document.getElementById("duration");
+const progress = document.getElementById("progress");
+const volume = document.getElementById("volume");
+
+let currentSongs = songs;   // your songs array
+let currentIndex = 0;
 
 //dynamic loop
 songs.forEach((song, index) => {
@@ -23,5 +33,52 @@ function loadSong(index) {
   player.play();
 
   cover.src = song.img;
-    title.textContent = `${song.title} — ${song.artist}`;
+  title.textContent = `${song.title} — ${song.artist}`;
+}
+
+playBtn.addEventListener("click", () => {
+  if (player.paused) {
+    player.play();
+    playBtn.textContent = "⏸";
+  } else {
+    player.pause();
+    playBtn.textContent = "▶";
+  }
+});
+
+nextBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex + 1) % currentSongs.length;
+  loadSong(currentIndex);
+});
+
+prevBtn.addEventListener("click", () => {
+  currentIndex = (currentIndex - 1 + currentSongs.length) % currentSongs.length;
+  loadSong(currentIndex);
+});
+
+player.addEventListener("ended", () => {
+  nextBtn.click();
+});
+
+player.addEventListener("timeupdate", () => {
+  const percent = (player.currentTime / player.duration) * 100;
+  progress.value = percent;
+
+  currentTimeEl.textContent = formatTime(player.currentTime);
+  durationEl.textContent = formatTime(player.duration);
+});
+
+progress.addEventListener("input", () => {
+  player.currentTime = (progress.value / 100) * player.duration;
+});
+
+volume.addEventListener("input", () => {
+  player.volume = volume.value;
+});
+
+function formatTime(time) {
+  if (isNaN(time)) return "0:00";
+  const min = Math.floor(time / 60);
+  const sec = Math.floor(time % 60).toString().padStart(2, "0");
+  return `${min}:${sec}`;
 }
