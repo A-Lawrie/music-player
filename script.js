@@ -1,3 +1,5 @@
+//hii ni ya the original for all songs in one folder, wanted to add it for different folders(playlists)
+
 // const songs = [
 //   { title: "Booga", artist: "Central Cee", src: "audios/tests/booga.mp3", img: "covers/booga.jpg", duration: "1:50" },
 //   { title: "La Mudanza", artist: "Bad Bunny", src: "audios/tests/la-mudanza.mp3", img: "covers/la-mudanza.jpg", duration: "3:35" },
@@ -78,6 +80,8 @@ function loadSong(index, songs = currentSongs) {
   songItems.forEach(item => item.classList.remove("active-song"));
   songItems[index].classList.add("active-song");
 }
+
+//also the old code
 
 //dynamic loop
 // songs.forEach((song, index) => {
