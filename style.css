@@ -58,6 +58,7 @@ nav{
     border-bottom: 1px solid #ccc;
 }
 .songs ul li{
+    font-family: Arial, sans-serif;
     color: white;
     font-size: 20px;
     font-weight: bold;
@@ -72,6 +73,10 @@ nav{
     cursor: pointer;
     display: flex;
     align-items: center;
+}
+.songs ul:last-child{
+    align-self: right;
+    justify-content: end;
 }
 .controller-section{
     padding-left: 30px;
