@@ -36,9 +36,42 @@ nav{
     display: flex;
     flex-direction: row;
     justify-content: left;
-    align-items: center;
+    align-items: top;
     width: 100%;
-    min-height: 85vh;
+    min-height: 83vh;
+}
+.playlists{
+    width: 18%;
+    background-color: black;
+    color: white;
+    padding: 20px;
+    border-right: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.songs{
+    width: 82%;
+    background-color: black;
+    padding: 10px;
+    padding-left: 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+}
+.songs ul li{
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    width: 95%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #6e6e6e;
+    list-style: none;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
 }
 .controller-section{
     padding-left: 30px;
@@ -49,4 +82,20 @@ nav{
     justify-content: left;
     align-items: center;
     width: 100%;
+}
+.song-details{
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    width: 40%;
+}
+#cover{
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-right: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
