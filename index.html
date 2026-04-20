@@ -21,16 +21,7 @@
     </nav>
     <div class="music-player">
             <div class="playlists">
-                <ul>1</ul>
-                <ul>2</ul>
-                <ul>3</ul>
-                <ul>4</ul>
-                <ul>5</ul>
-                <ul>6</ul>
-                <ul>7</ul>
-                <ul>8</ul>
-                <ul>9</ul>
-                <ul>0</ul>
+                <ul id="playlists"></ul>
             </div>
             <div class="songs">
                 <ul id="playlist"></ul>
@@ -57,7 +48,7 @@
             </div>
             <div class="music-controls">
                 <div class="volume">
-                    🔊
+                    <span id="volumeIcon">🔊</span>
                     <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
                 </div>
                 <audio id="player"></audio>

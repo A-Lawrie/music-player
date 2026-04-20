@@ -49,6 +49,23 @@ nav{
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
 }
+.playlists ul li{
+    font-family: Arial, sans-serif;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    width: 90%;
+    height: 50px;
+    border-radius: 10px;
+    background-color: #6e6e6e;
+    list-style: none;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
 .songs{
     width: 82%;
     background-color: black;
@@ -94,6 +111,14 @@ nav{
     justify-content: left;
     align-items: center;
     width: 40%;
+}
+.playtime-details{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: left;
+    width: 40%;
+    margin-right: 190px;
 }
 #cover{
     width: 50px;
